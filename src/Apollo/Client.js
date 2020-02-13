@@ -6,5 +6,7 @@ export default new ApolloClient({
   clientState: {
     defaults,
     resolvers
+
+    //ddd
   }
 });
