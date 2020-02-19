@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Footer = styled.footer`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-transform: uppercase;
   font-weight: 600;
@@ -12,6 +12,7 @@ const Footer = styled.footer`
 
 const List = styled.ul`
   display: flex;
+  margin-right:80px;
 `;
 
 const ListItem = styled.li`
@@ -44,19 +45,7 @@ export default () => (
         <Link href="#">api</Link>
       </ListItem>
       <ListItem>
-        <Link href="#">jobs</Link>
-      </ListItem>
-      <ListItem>
-        <Link href="#">privacy</Link>
-      </ListItem>
-      <ListItem>
-        <Link href="#">terms</Link>
-      </ListItem>
-      <ListItem>
         <Link href="#">directory</Link>
-      </ListItem>
-      <ListItem>
-        <Link href="#">profiles</Link>
       </ListItem>
       <ListItem>
         <Link href="#">hashtags</Link>

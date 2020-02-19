@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Input from "./Input";
 import useInput from "../Hooks/useInput";
-import { NotePlus, User,SeeNotes } from "./Icons";
+import { NotePlus, User, SeeNotes } from "./Icons";
 
 const Header = styled.header`
   width: 100%;
@@ -11,7 +11,7 @@ const Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: ${props => props.theme.lightYellow};
   border-bottom: ${props => props.theme.boxBorder};
   border-radius: 0px;
   display: flex;
@@ -47,7 +47,7 @@ const SearchInput = styled(Input)`
   border-radius: 3px;
   height: auto;
   text-align: center;
-  width: 70%;
+  width: 90%;
   &::placeholder {
     opacity: 0.8;
     font-weight: 200;
@@ -56,7 +56,7 @@ const SearchInput = styled(Input)`
 
 const HeaderLink = styled(Link)`
   &:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 45px;
   }
 `;
 
@@ -69,7 +69,7 @@ export default () => {
           <Link to="/">
             <img
               src="https://placeit-assets1.s3-accelerate.amazonaws.com/custom-pages/2019-logo-maker/Custom-Logos.png"
-              width="36"
+              width="45"
               height="36"
               alt=""
             />
@@ -81,14 +81,14 @@ export default () => {
           </form>
         </HeaderColumn>
         <HeaderColumn>
-           <HeaderLink to="/noteplus">
+          <HeaderLink to="/noteplus">
             <NotePlus />
           </HeaderLink>
 
           <HeaderLink to="/SeeNotes">
             <SeeNotes />
           </HeaderLink>
-          
+
           <HeaderLink to="/username">
             <User />
           </HeaderLink>
