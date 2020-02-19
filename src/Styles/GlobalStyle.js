@@ -9,8 +9,6 @@ export default createGlobalStyle`
     }
     body {
         background-color:${props => props.theme.bgColor};
-<<<<<<< HEAD
-=======
         color:${props => props.theme.blackColor};
         font-size:14px;
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -22,6 +20,5 @@ export default createGlobalStyle`
     }
     input:focus{
         outline:none;
->>>>>>> 45464a84baf3e8507c3ed6b5786c8846bcf4ffaf
     }
 `;

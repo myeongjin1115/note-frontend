@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-export default {
-  bgColor: "#FAFAFA",
-  grayColor: "#D5D8DC"
-  // import default CSS
-=======
 const BOX_BORDER = "1px solid #e6e6e6";
 const BORDER_RADIUS = "4px";
 
@@ -22,7 +16,5 @@ export default {
   borderRadius: "4px",
   whiteBox: `border:${BOX_BORDER};
              border-radius:${BORDER_RADIUS};
-             background-color:white;
-            `
->>>>>>> 45464a84baf3e8507c3ed6b5786c8846bcf4ffaf
+             background-color:white;`
 };
