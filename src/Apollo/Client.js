@@ -6,7 +6,8 @@ export default new ApolloClient({
   clientState: {
     defaults,
     resolvers
-
-    //ddd
+  },
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem("token")}`
   }
 });
