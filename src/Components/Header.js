@@ -72,8 +72,7 @@ const ME = gql`
 
 export default withRouter(({ history }) => {
   const search = useInput("");
-  const meQuery = useQuery(ME);
-  console.log(meQuery);
+  const { data } = useQuery(ME);
   const onSearchSubmit = e => {
     e.preventDefault();
     history.push(`/search?term=${search.value}`);
@@ -97,7 +96,7 @@ export default withRouter(({ history }) => {
           </form>
         </HeaderColumn>
         <HeaderColumn>
-          <HeaderLink to="/noteplus">
+          <HeaderLink to="/NotePlus">
             <NotePlus />
           </HeaderLink>
 
@@ -105,9 +104,15 @@ export default withRouter(({ history }) => {
             <SeeNotes />
           </HeaderLink>
 
-          <HeaderLink to="/username">
-            <User />
-          </HeaderLink>
+          {!data ? (
+            <HeaderLink to="/#">
+              <User />
+            </HeaderLink>
+          ) : (
+            <HeaderLink to={data.me.username}>
+              <User />
+            </HeaderLink>
+          )}
         </HeaderColumn>
       </HeaderWrapper>
     </Header>
