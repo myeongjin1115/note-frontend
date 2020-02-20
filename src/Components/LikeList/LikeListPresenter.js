@@ -16,6 +16,6 @@ const LikeList = styled.div`
 
 export default ({ id, caption }) => (
   <LikeList>
-    <Link to={`/note/${caption}`}>{caption}</Link>
+    <Link to={`/wordbook/${caption}`}>{caption}</Link>
   </LikeList>
 );

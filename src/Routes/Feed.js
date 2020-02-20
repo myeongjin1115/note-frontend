@@ -24,20 +24,9 @@ export const FEED_QUERY = gql`
 
       following {
         username
-        following {
-          username
-          createdAt
-        }
         posts {
           id
           caption
-          createdAt
-        }
-        likes {
-          post {
-            id
-            caption
-          }
           createdAt
         }
       }
@@ -79,7 +68,6 @@ const FatText = styled.div`
 const RightWrapper = styled.div`
   width: 100%;
   flex-direction: column;
-  border-right: 1px solid #e1e4e8;
 `;
 
 export default () => {
@@ -121,12 +109,7 @@ export default () => {
         <RightWrapper>
           {following &&
             following.map(user => (
-              <DoneFollowing
-                username={user.username}
-                following={user.following}
-                posts={user.posts}
-                likes={user.likes}
-              />
+              <DoneFollowing username={user.username} posts={user.posts} />
             ))}
         </RightWrapper>
       </Wrapper>
