@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Link,withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Input from "./Input";
 import useInput from "../Hooks/useInput";
-import { NotePlus, User, SeeNotes } from "./Icons";
+import { NotePlus, User } from "./Icons";
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo-hooks";
 
@@ -72,8 +72,7 @@ const ME = gql`
 
 export default withRouter(({ history }) => {
   const search = useInput("");
-  const meQuery = useQuery(ME);
-  console.log(meQuery);
+  const { data } = useQuery(ME);
   const onSearchSubmit = e => {
     e.preventDefault();
     history.push(`/search?term=${search.value}`);
@@ -92,22 +91,24 @@ export default withRouter(({ history }) => {
           </Link>
         </HeaderColumn>
         <HeaderColumn>
-        <form onSubmit={onSearchSubmit}>
+          <form onSubmit={onSearchSubmit}>
             <SearchInput {...search} placeholder="Search" />
           </form>
         </HeaderColumn>
         <HeaderColumn>
-          <HeaderLink to="/noteplus">
+          <HeaderLink to="/NotePlus">
             <NotePlus />
           </HeaderLink>
 
-          <HeaderLink to="/SeeNotes">
-            <SeeNotes />
-          </HeaderLink>
-
-          <HeaderLink to="/username">
-            <User />
-          </HeaderLink>
+          {!data ? (
+            <HeaderLink to="/#">
+              <User />
+            </HeaderLink>
+          ) : (
+            <HeaderLink to={data.me.username}>
+              <User />
+            </HeaderLink>
+          )}
         </HeaderColumn>
       </HeaderWrapper>
     </Header>
