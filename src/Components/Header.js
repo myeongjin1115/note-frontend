@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
 import Input from "./Input";
 import useInput from "../Hooks/useInput";
-import { NotePlus, User, SeeNotes } from "./Icons";
+import { NotePlus, User } from "./Icons";
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo-hooks";
 
@@ -98,10 +98,6 @@ export default withRouter(({ history }) => {
         <HeaderColumn>
           <HeaderLink to="/NotePlus">
             <NotePlus />
-          </HeaderLink>
-
-          <HeaderLink to="/SeeNotes">
-            <SeeNotes />
           </HeaderLink>
 
           {!data ? (

@@ -5,14 +5,12 @@ import { Route, Switch } from "react-router-dom";
 import Auth from "../Routes/Auth";
 import Feed from "../Routes/Feed";
 import NotePlus from "../Routes/NotePlus";
-import SeeNotes from "../Routes/SeeNotes";
 import Profile from "../Routes/Profile";
 
 const LoggedInRoutes = () => (
   <Switch>
     <Route exact path="/" component={Feed} />
     <Route path="/NotePlus" component={NotePlus} />
-    <Route path="/SeeNotes" component={SeeNotes} />
     <Route path="/:username" component={Profile} />
   </Switch>
 );
